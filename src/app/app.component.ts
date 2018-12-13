@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app1';
+
+  public running: boolean = true
+  public endResult: string
+
+
+  public endGame(tipo: string): void {
+     this.running = false;
+     this.endResult = tipo;
+  }
+
+  public restartGame(): void { // reinicia o jogo zerando os atributos
+     this.running = true;
+     this.endResult = undefined;
+  }
 }

@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="jumbotron">
+      <div class="row">
+          <div class="col-sm-6">
+              <app-progresso [progresso]="progresso"></app-progresso>
+          </div>
+          <div class="col-sm-6">
+              <div class="d-flex justify-content-end">
+                  <app-tentativas [tentativas] = "tentativas"></app-tentativas>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col">
+              <h5>Translate the sentence to portuguese</h5>
+              <p>{{ rodadaFrase.fraseEng }}</p>
+              <div class="form-group">
+                  <textarea class="form-control"
+                    rows="3"
+                    (input)="atualizaResposta($event)"
+                    [value]="resposta">
+                  </textarea>
+                  <!--$event captura os estados do elemento no momento em que o evento no caso o input acontece-->
+             </div>
+          </div>
+      </div>
+      <div class="row">
+         <div class="col">
+            <div class="d-flex justify-content-end">
+                <button type="button" (click)="verificarResposta()" class="btn btn-primary">Check the answer</button>
+            </div>
+         </div>
+      </div>
+
+      <!--<div class="alert alert-success" *ngIf="flag==true" >
+            <h3>Acertou!</h3>
+          </div>
+      -->
+
+    </div>
+</div>
